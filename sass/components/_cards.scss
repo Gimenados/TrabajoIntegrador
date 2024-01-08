@@ -1,0 +1,49 @@
+.cards__container {
+    background-color: $secondary-color;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+    .cards__element {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        margin: 2rem;
+        padding: 2rem;
+        @extend %flex-center;
+        &:hover {
+           box-shadow: 2px 3px 25px 5px $primary-color;
+           cursor: pointer;
+        }
+      
+        h2 {
+          font-size: 1rem !important;
+          font-weight: bold;
+          text-align: center;
+          text-transform: uppercase;
+        }
+        
+        img {
+          border: $border-img;
+          text-align: center;
+          margin: $margin-cards;
+          height: 10vw;
+          width: 10vw;
+            &:hover {
+              transform: scale(1.1);
+            }
+        }
+
+        p, span {
+          box-sizing: content-box;
+          font-weight: 800;
+          margin: $margin-cards;
+          width: 200px;
+          text-align: center;
+        }
+
+        span {
+          color: $precio-color;
+        }
+    }
+}

@@ -1,0 +1,134 @@
+// .main_container {
+//     @extend %flex-center;
+//     background-size: cover;
+//     background-image: url(https://www.lavanguardia.com/uploads/2020/12/27/5fe83cbb29229.jpeg);
+//     flex-direction: column;
+//     background-repeat: no-repeat;
+//     justify-content: flex-start;
+//     background-position: 100% 40%;
+//     height: 100vh;
+  
+//     h2 {
+//       @extend %title-style;
+//     }
+  
+//     p {
+//       background-color: #f5fafd2e;
+//       font-weight: 900;
+//       padding: 0.5rem 0;
+//       text-transform: uppercase;
+//     }
+//   }
+
+  
+  .slider_container {
+    margin-left: 0px !important;
+    position: relative;
+    max-width: 100% !important;
+    animation: slide 15s infinite alternate ease-in-out;
+    ul {
+      display: flex;
+      padding: 0 !important;
+      width: 400%;
+      li {
+        list-style: none;
+        width: 100%;
+        position: relative;
+        text-align: center;
+        @extend %flex-center;
+      }
+      img {
+        width: 100%;
+        height: auto; 
+        box-sizing: border-box;
+        position: relative; 
+      }
+    }
+    .text_container {
+      position: absolute;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      z-index: 2; /* Asegura que el texto esté por encima de las imágenes */
+      color: rgb(39, 40, 74); /* Estilo del texto */
+      
+    
+      h2 {
+        @extend %title-style;
+        font-size: 55px !important;
+        margin-bottom: 35px;
+        background-color: #f5fafd46;
+      }
+    
+      p {
+        width: 100%;
+        padding: 0.5rem 0;
+        text-transform: uppercase;
+        background-color: #f5fafd75;
+        font-weight: 900
+      }
+    }
+  }
+
+  .form_container_contact {
+    align-items: center;
+    background-color: $primary-color;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0.8rem;
+  
+     .form_element_contact {
+       align-items: center;
+       background-color: #F5FAFD !important;
+       border: 1px solid black;
+       box-shadow: $box-primary;
+       display: flex;
+       justify-content: center;
+       flex-direction: column;
+       margin: 1.5rem;
+       padding: 1.5rem;
+       width: 50%;
+  
+     h2 {
+      @extend %title-style;
+      padding-bottom: 0.5rem;
+    }
+  
+     label {
+      font-size: 1rem;
+      font-weight: 900;
+      padding: 0.8rem 0rem;
+      &.label-required::after {
+        content: "(*)";
+        color: rgb(184, 19, 19) !important;
+        margin-left: 0.5rem;
+      }
+     }
+  
+     input, textarea {
+       margin: 0.5rem 4rem;
+       text-align: center;
+       height: 20px;
+       width: 75%;
+     }
+
+     textarea {
+      height: 60px !important;
+     }
+  
+     button {
+       padding: 0.5rem 1rem;
+       font-weight: 900;
+     }
+  }
+  }
+
+  @keyframes slide {
+    0%, 20% { transform: translateX(0); }
+    30%, 50% { transform: translateX(-100%); }
+    60%, 80% { transform: translateX(-200%); }
+    90%, 100% { transform: translateX(-300%); }
+  }

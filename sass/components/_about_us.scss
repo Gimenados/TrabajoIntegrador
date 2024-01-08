@@ -1,0 +1,63 @@
+.title_container {
+    h1 {
+      @extend %title-style;
+      text-align: center;
+      padding: 1.5rem 1rem !important;
+      font-size: 2rem
+    }
+  }
+  
+  .select_container_us {
+    @extend %flex-center;    
+    flex-direction: row;
+    padding: 1rem;
+  
+    div {
+      @extend %flex-center;
+      flex-direction: column;
+      text-align: center;
+      width: 30%;
+      flex-wrap: wrap;
+    }
+
+    h2 {
+      padding: 1.5rem !important;
+      font-size: 1.5rem !important;
+    }
+  
+    img {
+      border: 1px solid grey;
+      border-radius: 100%;
+      box-shadow: $box-primary;
+      margin: 1rem;
+      margin: 0.5rem !important;
+      padding: 0.5rem !important;
+      height: 150px;
+      width: 150px;
+      &:hover {
+        transform: scale(1.25);
+        cursor: pointer;
+        box-shadow: $box-secondary;
+      }
+    }
+    p {
+      font-weight: 900;
+      margin: 1rem
+    }
+  }
+  
+  .select_container_location {
+     @extend %flex-center;
+     background-image: url(https://www.lavanguardia.com/uploads/2020/12/28/5fe96fa52fd78.jpeg);
+     background-position: 70% 45%;
+     margin: 1rem 0rem;
+     height: 100vh;
+     padding: 1rem 0rem;
+     margin-bottom: 0px !important;
+    p {
+      border: 1px;
+      font-weight: 900;
+      margin: 2rem;
+      text-align: center;
+    }
+  }
