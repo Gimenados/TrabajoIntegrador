@@ -23,3 +23,23 @@
         text-transform: uppercase;
     }
   }
+
+  .section2_container {
+    margin-top: 0px !important;
+    background-image: url(https://hips.hearstapps.com/hmg-prod/images/two-wooden-toys-against-a-blue-background-with-royalty-free-image-1654524375.jpg);
+    background-repeat: no-repeat;
+    background-position: 70% 80%;
+    background-size: cover;
+    margin: 1rem 0rem;
+    height: 67vh;
+    padding: 1rem 0rem;
+    margin-bottom: 0px !important;
+    @extend %flex-center;    
+    
+    h2 {
+      background-color: rgba(21, 115, 197, 0.193) !important;
+      @extend %title-style;
+      padding: 2rem;
+    }
+  }
+  
