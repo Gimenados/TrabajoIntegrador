@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const email = document.getElementById('email');
         const comment = document.getElementById('comment');
 
-        validateField(firstName, /^[A-Za-z- ][a-záéíóúüñÁÉÍÓÚÜÑ]{2,9}$/, 'Primer nombre inválido');
+        validateField(firstName, /^[A-Za-z- ][a-záéíóúüñÁÉÍÓÚÜÑ]{2,9}$/, 'Ingrese un nombre incorrecto');
         validateField(email, /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}$/, 'La dirección de correo electrónico no es válida');
         validateField(comment, /^[A-Za-z0-9\s]{1,150}$/, 'Ingrese hasta máximo 150 caracteres');
     }
@@ -25,30 +25,33 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
   
-    //Creo un elemento div en el dom para mostrar el mensaje error
     function showError(field, errorMessage) {
-        const errorDiv = document.createElement('div');
-        errorDiv.className = 'error-message';
-        errorDiv.textContent = errorMessage;
-  
-        //Estilos al div
-        errorDiv.style.display = 'block';
-        errorDiv.style.color = 'red';
-        errorDiv.style.marginTop = '8px';
-  
         const parent = field.parentElement;
-        parent.appendChild(errorDiv);
+    
+        // Verifica si ya hay un mensaje de error para este campo
+        const existingError = parent.querySelector('.error-message');
+        
+        if (existingError) {
+            // Si ya hay un mensaje de error, simplemente actualiza el contenido
+            existingError.textContent = errorMessage;
+            existingError.style.display = 'block'; // Muestra el mensaje de error
+        } else {
+            // Si no hay un mensaje de error, agrega el nuevo elemento div al DOM
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'error-message';
+            errorDiv.textContent = errorMessage;
+            parent.appendChild(errorDiv);
+        }
     }
-
-
-    //Ocultar el mensaje de error asociado a un campo de formulario.
+    
     function hideError(field) {
         const parent = field.parentElement;
         const errorDiv = parent.querySelector('.error-message');
-  
+      
         if (errorDiv) {
-            // Ocultar el mensaje de error al removerlo del DOM
-            parent.removeChild(errorDiv);
+            // Ocultar el mensaje de error al cambiar la propiedad display
+            errorDiv.style.display = 'none';
         }
     }
+    
 });

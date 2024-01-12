@@ -158,7 +158,7 @@ body {
   position: relative;
 }
 .slider_container .text_container {
-  position: fixed;
+  position: absolute;
   text-align: center;
   display: flex;
   justify-content: center;
@@ -202,6 +202,11 @@ body {
   margin: 1.5rem;
   padding: 1.5rem;
   width: 50%;
+}
+.form_container_contact .form_element_contact .error-message {
+  color: red;
+  margin-top: 8px;
+  display: none; /* Inicialmente oculto */
 }
 .form_container_contact .form_element_contact h2 {
   padding-bottom: 0.5rem;
