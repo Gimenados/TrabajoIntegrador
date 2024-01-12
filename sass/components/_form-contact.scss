@@ -1,26 +1,3 @@
-// .main_container {
-//     @extend %flex-center;
-//     background-size: cover;
-//     background-image: url(https://www.lavanguardia.com/uploads/2020/12/27/5fe83cbb29229.jpeg);
-//     flex-direction: column;
-//     background-repeat: no-repeat;
-//     justify-content: flex-start;
-//     background-position: 100% 40%;
-//     height: 100vh;
-  
-//     h2 {
-//       @extend %title-style;
-//     }
-  
-//     p {
-//       background-color: #f5fafd2e;
-//       font-weight: 900;
-//       padding: 0.5rem 0;
-//       text-transform: uppercase;
-//     }
-//   }
-
-  
   .slider_container {
     margin-left: 0px !important;
     position: relative;
@@ -49,9 +26,7 @@
       position: fixed;
       text-align: center;
       display: flex;
-      background-color: #f5fafdab;
       justify-content: center;
-      width: 38%;
       padding: 1.5rem;
       flex-direction: column;
       z-index: 2; /* Asegura que el texto esté por encima de las imágenes */
@@ -59,18 +34,18 @@
       
     
       h2 {
-        @extend %title-style;
-        font-size: 55px !important;
+        @extend %title-style2;
+        font-size: 3rem !important;
         margin-bottom: 35px;
-        backdrop-filter: blur(5px);
+        text-transform: uppercase;
+        backdrop-filter: blur(1px);
       }
     
       p {
         width: 100%;
         padding: 0.5rem 0;
-        text-transform: uppercase;
-        backdrop-filter: blur(5px);
-        font-weight: 900;
+        font-family: 'Lemon', serif;
+        backdrop-filter: blur(1px);
       }
     }
   }

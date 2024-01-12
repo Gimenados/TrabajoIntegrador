@@ -9,17 +9,17 @@
   align-items: center;
 }
 
-.title_container h1, .section__container h1, .form_container_high h2, .form_container_contact .form_element_contact h2, .slider_container .text_container h2 {
+.title_container h1, .section__container h1, .form_container_high h2, .form_container_contact .form_element_contact h2 {
   font-family: "Rubik Doodle Shadow", sans-serif !important;
   letter-spacing: 0.3rem;
   font-weight: 900;
   font-size: 1.8rem;
 }
 
-.section2_container .section2_element3 p, .section2_container .section2_element2 p, .section2_container .section2_element1 p {
+.section2_container .section2_element3 p, .section2_container .section2_element2 p, .section2_container .section2_element1 p, .slider_container .text_container h2 {
   font-family: "Lemon", serif;
   letter-spacing: 0.2rem;
-  font-size: 1.2rem;
+  font-size: 1rem;
   text-align: center;
 }
 
@@ -61,7 +61,6 @@ body {
 }
 .cards__container .cards__element h2 {
   font-size: 1rem !important;
-  font-family: "Lemon", serif;
   font-weight: bold;
   text-align: center;
   text-transform: uppercase;
@@ -162,27 +161,25 @@ body {
   position: fixed;
   text-align: center;
   display: flex;
-  background-color: rgba(245, 250, 253, 0.6705882353);
   justify-content: center;
-  width: 38%;
   padding: 1.5rem;
   flex-direction: column;
   z-index: 2; /* Asegura que el texto esté por encima de las imágenes */
   color: rgb(39, 40, 74); /* Estilo del texto */
 }
 .slider_container .text_container h2 {
-  font-size: 55px !important;
+  font-size: 3rem !important;
   margin-bottom: 35px;
-  -webkit-backdrop-filter: blur(5px);
-          backdrop-filter: blur(5px);
+  text-transform: uppercase;
+  -webkit-backdrop-filter: blur(1px);
+          backdrop-filter: blur(1px);
 }
 .slider_container .text_container p {
   width: 100%;
   padding: 0.5rem 0;
-  text-transform: uppercase;
-  -webkit-backdrop-filter: blur(5px);
-          backdrop-filter: blur(5px);
-  font-weight: 900;
+  font-family: "Lemon", serif;
+  -webkit-backdrop-filter: blur(1px);
+          backdrop-filter: blur(1px);
 }
 
 .form_container_contact {
