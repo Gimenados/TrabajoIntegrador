@@ -25,3 +25,18 @@ $border-img: 1px solid $secondary-color;
   font-weight: 900;
   font-size: 1.8rem
 }
+
+%title-style2 {
+  font-family: 'Lemon', serif;
+  letter-spacing: 0.2rem;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+//SECTION 
+%section-container {
+  height: 60%;
+  width: 25%;
+  margin: 0rem 1rem;
+  box-shadow: -10px 4px 30px 7px #182129;
+}

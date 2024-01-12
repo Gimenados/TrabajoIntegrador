@@ -25,21 +25,48 @@
   }
 
   .section2_container {
+    @extend %flex-center;
+    background-color: aliceblue;
+    height: 60vh;
     margin-top: 0px !important;
-    background-image: url(https://hips.hearstapps.com/hmg-prod/images/two-wooden-toys-against-a-blue-background-with-royalty-free-image-1654524375.jpg);
-    background-repeat: no-repeat;
-    background-position: 70% 80%;
-    background-size: cover;
-    margin: 1rem 0rem;
-    height: 67vh;
-    padding: 1rem 0rem;
     margin-bottom: 0px !important;
-    @extend %flex-center;    
-    
-    h2 {
-      background-color: rgba(21, 115, 197, 0.193) !important;
-      @extend %title-style;
-      padding: 2rem;
+    background-color: $primary-color;
+
+    .section2_element1 {
+      @extend %flex-center;
+      @extend %section-container;
+      background-image: url(https://i.pinimg.com/564x/00/56/b0/0056b02da378ea5d28b54e0ba15525a0.jpg);
+      background-repeat: no-repeat;
+      
+      p {
+        @extend %title-style2;
+        // backdrop-filter: blur(10px);
+        padding: 1.5rem 3rem;
+      }
     }
+
+    .section2_element2 {
+      @extend %flex-center;
+      @extend %section-container;
+      background-image: url(https://i.pinimg.com/564x/49/8f/45/498f456f7725b66443dcb62ae0794c36.jpg);
+      background-repeat: no-repeat;
+  
+      p {
+        @extend %title-style2;
+      }
+    }
+
+    .section2_element3 {
+      @extend %flex-center;
+      @extend %section-container;
+      background-image: url(https://i.pinimg.com/564x/f9/5f/ac/f95facb59d05714ee4fa16cf449083a3.jpg);
+      background-position: 8% 50% !important;
+      background-repeat: no-repeat;
+      p {
+        @extend %title-style2;
+        padding: 0rem 0.2rem;
+      }
+    }
+
   }
   

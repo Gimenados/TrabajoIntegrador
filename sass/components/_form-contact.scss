@@ -39,16 +39,20 @@
       }
       img {
         width: 100%;
+        height: 100% !important;
         height: auto; 
         box-sizing: border-box;
         position: relative; 
       }
     }
     .text_container {
-      position: absolute;
+      position: fixed;
       text-align: center;
       display: flex;
+      background-color: #f5fafdab;
       justify-content: center;
+      width: 38%;
+      padding: 1.5rem;
       flex-direction: column;
       z-index: 2; /* Asegura que el texto esté por encima de las imágenes */
       color: rgb(39, 40, 74); /* Estilo del texto */
@@ -58,22 +62,22 @@
         @extend %title-style;
         font-size: 55px !important;
         margin-bottom: 35px;
-        background-color: #f5fafd46;
+        backdrop-filter: blur(5px);
       }
     
       p {
         width: 100%;
         padding: 0.5rem 0;
         text-transform: uppercase;
-        background-color: #f5fafd75;
-        font-weight: 900
+        backdrop-filter: blur(5px);
+        font-weight: 900;
       }
     }
   }
 
   .form_container_contact {
     align-items: center;
-    background-color: $primary-color;
+    background: linear-gradient(45deg, rgb(244, 246, 242), $primary-color);
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -111,8 +115,8 @@
      input, textarea {
        margin: 0.5rem 4rem;
        text-align: center;
-       height: 20px;
-       width: 75%;
+       height: 25px;
+       width: 60%;
      }
 
      textarea {
@@ -122,6 +126,10 @@
      button {
        padding: 0.5rem 1rem;
        font-weight: 900;
+       text-transform: uppercase;
+       background-color: $primary-color;
+       border-radius: 20%;
+       padding: 1rem;
      }
   }
   }
