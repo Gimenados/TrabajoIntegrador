@@ -473,7 +473,7 @@ body {
 .select_container_location {
   background-image: url(https://www.lavanguardia.com/uploads/2020/12/28/5fe96fa52fd78.jpeg);
   background-position: 70% 45%;
-  margin: 1rem 0rem;
+  margin: 0rem 1rem 0rem 0rem;
   height: 80vh;
   padding: 1rem 0rem;
   margin-bottom: 0px !important;
