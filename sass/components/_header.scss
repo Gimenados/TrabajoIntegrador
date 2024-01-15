@@ -50,18 +50,17 @@
   
           a {
             color: black;
-            font-size: 1rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
             font-weight: 900;
             text-decoration: none;
             &:hover {
                 font-size: 20px; 
-                &::after {
+                &:after {
                   content: '';
-                  background-color: black;
                   bottom: -5px; 
                   left: 0;
-                  position: absolute;
-                  width: 100%;
+                  width: 90%;
                   height: 2px; 
                 }
               }

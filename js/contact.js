@@ -3,11 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     form.addEventListener('submit', function (event) {
         event.preventDefault();
-        console.log('Formulario enviado');
-        console.log('Antes de llamar a validateForm');
         validateForm();
-        console.log('Después de llamar a validateForm');
-
     });
 
     function validateForm() {
@@ -22,8 +18,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     //validateFiel toma 3 parametros, field un objeto del dom, pattern que verifica si un objeto es null o undefined y errorMensaje que muestra el mensaje del error
     function validateField(field, pattern, errorMessage) {
-        console.log('Validando campo:', field.id);
-        console.log('Valor del campo:', field.value);
     
         if (pattern && !pattern.test(field.value)) {
             showError(field, errorMessage);
@@ -35,8 +29,6 @@ document.addEventListener('DOMContentLoaded', function () {
     
     function showError(field, errorMessage) {
         const parent = field.parentElement;
-    
-        // Verifica si ya hay un mensaje de error para este campo
         const existingError = parent.querySelector('.error-message');
     
         if (existingError) {
@@ -51,7 +43,6 @@ document.addEventListener('DOMContentLoaded', function () {
             errorDiv.className = 'error-message';
             errorDiv.textContent = errorMessage;
             parent.appendChild(errorDiv);
-            console.log('Mensaje de error creado');
         }
     }
     
@@ -62,7 +53,6 @@ document.addEventListener('DOMContentLoaded', function () {
       
         if (errorDiv) {
             // Ocultar el mensaje de error al cambiar la propiedad display
-            console.log('Ocultando mensaje de error');
             errorDiv.style.display = 'none';
         }
     }    

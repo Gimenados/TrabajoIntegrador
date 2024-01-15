@@ -363,20 +363,19 @@ body {
 }
 .header_container .header__element__2 ul li a {
   color: black;
-  font-size: 1rem;
+  font-size: 0.9rem;
+  text-transform: uppercase;
   font-weight: 900;
   text-decoration: none;
 }
 .header_container .header__element__2 ul li a:hover {
   font-size: 20px;
 }
-.header_container .header__element__2 ul li a:hover::after {
+.header_container .header__element__2 ul li a:hover:after {
   content: "";
-  background-color: black;
   bottom: -5px;
   left: 0;
-  position: absolute;
-  width: 100%;
+  width: 90%;
   height: 2px;
 }
 
@@ -471,6 +470,7 @@ body {
 .select_container_location {
   background-image: url(https://www.lavanguardia.com/uploads/2020/12/28/5fe96fa52fd78.jpeg);
   background-position: 70% 45%;
+  margin-right: 0px !important;
   margin: 0rem 1rem 0rem 0rem;
   height: 80vh;
   padding: 1rem 0rem;
