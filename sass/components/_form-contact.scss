@@ -70,13 +70,6 @@
        margin: 1.5rem;
        padding: 1.5rem;
        width: 50%;
-
-     .error-message {
-        color: red;
-        margin-top: 8px;
-        display: none; /* Inicialmente oculto */
-    }
-    
   
      h2 {
       @extend %title-style;
