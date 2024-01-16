@@ -8,8 +8,8 @@
         display: flex;
         flex-wrap: wrap;
         flex-direction: column;
-        margin: 2rem;
-        padding: 2rem;
+        margin: 1rem;
+        padding: 1rem;
         @extend %flex-center;
         &:hover {
            box-shadow: 2px 3px 25px 5px $primary-color;

@@ -61,7 +61,7 @@
   
      .form_element_contact {
        align-items: center;
-       background-color: #F5FAFD !important;
+       background-image: url(/imagenes/contacto.png);
        border: 1px solid black;
        box-shadow: $box-primary;
        display: flex;
@@ -90,8 +90,14 @@
      input, textarea {
        margin: 0.5rem 4rem;
        text-align: center;
+       padding: 0.5rem;
        height: 25px;
+       font-size: 1rem;
+       font-weight: 900;
+       border: none;
+       border-bottom: 1px solid black;
        width: 60%;
+       background-color: rgba(240, 248, 255, 0);
        margin-bottom: 20px !important;
      }
 

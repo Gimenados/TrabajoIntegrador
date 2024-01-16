@@ -47,10 +47,9 @@ const onSubmitProduct = e => {
     const stockInput = document.getElementById("stock")
     const categoryInput = document.getElementById("category")
     const shortDescriptionInput = document.getElementById("shortDescription")
-    const envioInput = document.getElementById("envio")
     const ageFromInput = document.getElementById("ageFrom")
     const ageToInput = document.getElementById("ageTo")
-    const fotoInput = document.getElementById("foto")
+    const photoInput = document.getElementById("photo")
 
 //Input cuando tiene errores
     const nameError = document.getElementById("nameError")
@@ -58,7 +57,6 @@ const onSubmitProduct = e => {
     const categoryError = document.getElementById("categoryError")
     const priceError = document.getElementById("priceError")
     const stockError = document.getElementById("stockError")
-    const categoriaError = document.getElementById("categoriaError")
     const shortDescriptionError = document.getElementById("shortDescriptionError")
     const ageFromError = document.getElementById("ageFromError")
     const ageToError = document.getElementById("ageToError")
@@ -95,6 +93,23 @@ const onSubmitProduct = e => {
     priceInput.ariaInvalid = false
     priceError.innerText = ""
     priceError.style.display = "none"
+}
+
+//Stock
+if (!validatePostiveNumber(stockInput.value)) {
+    stockInput.ariaInvalid = true
+    stockError.innerText = "Debe ser un número positivo"
+    stockError.style.display = "block"
+    validForm = false
+} else if (!validateInt(parseInt(stockInput.value))) {
+    stockInput.ariaInvalid = true
+    stockError.innerText = "Debe ser un número entero"
+    stockError.style.display = "block"
+    validForm = false
+} else {
+    stockInput.ariaInvalid = false
+    stockError.innerText = ""
+    stockError.style.display = "none"
 }
     
     
