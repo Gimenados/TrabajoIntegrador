@@ -5,65 +5,69 @@
 //     console.log(subName);
 // };
 
-//Nombre * 
-//Marca
-//Categoria *
-//Descripcion corta *
+//Nombre * Marca Categoria * Descripcion corta *
 
 const validateStrings = (string) => {
-    const regex = new RegExp("^[A-Za-z ]+$")
-    return regex.test(string)  
+    const regex = new RegExp("^[A-Za-z Ññ]+$")
+    return regex.test(string)
 }
 
 const validateStgLength = (stg, minLength, maxLength) => {
     if (stg.length < minLength) {
         return `El valor debe tener al menos ${minLength} caracteres.`
-    } else if (stg > maxLength) {
-        return `El valor debe tener mas de ${maxLength} caracteres.`
+    } else if (stg.length > maxLength) {
+        return `El valor debe tener no más de ${maxLength} caracteres.`
     } else {
         return true
     }
 }
 
-//Precio *
-//Stock *
-//Edad desde y  hasta 
-
-const validatePositiveNumber = num => num >= 0
+const validatePostiveNumber = num => num >= 0
 
 const validateInt = num => Number.isInteger(num)
-// console.log(nanme)
 
+// Foto * Emails
 
-//Traemos todos los varoles de mi formulario
+const validateEmails = (email) => {
+    const regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    return regex.test(email)
+}
+
+//Precio * Stock * Edad desde y  hasta 
+
+const validatePositiveNumber = num => num >= 0;
+
+//Traemos todos los valores de mi formulario
 const onSubmitProduct = e => {
     e.preventDefault() 
-    const nameInput = document.getElementById("name").value
-    const precioInput = document.getElementById("precio").value
-    const stockInput = document.getElementById("stock").value
-    const categoriaInput = document.getElementById("categoria").value
-    const descripcion_cortaInput = document.getElementById("descripcion_corta").value
-    const marcaInput = document.getElementById("marca").value
-    const envioInput = document.getElementById("envio").value
-    const edadDesdeInput = document.getElementById("edad_desde").value
-    const edadHastaInput = document.getElementById("edad_hasta").value
-    const fotoInput = document.getElementById("foto").value
+    let validForm = true;
+    const nameInput = document.getElementById("name")
+    const brandInput = document.getElementById("brand")
+    const priceInput = document.getElementById("price")
+    const stockInput = document.getElementById("stock")
+    const categoryInput = document.getElementById("category")
+    const shortDescriptionInput = document.getElementById("shortDescription")
+    const envioInput = document.getElementById("envio")
+    const ageFromInput = document.getElementById("ageFrom")
+    const ageToInput = document.getElementById("ageTo")
+    const fotoInput = document.getElementById("foto")
 
 //Input cuando tiene errores
     const nameError = document.getElementById("nameError")
-    const precioError = document.getElementById("precioError")
+    const brandError = document.getElementById("brandError")
+    const categoryError = document.getElementById("categoryError")
+    const priceError = document.getElementById("priceError")
     const stockError = document.getElementById("stockError")
     const categoriaError = document.getElementById("categoriaError")
-    const marcaError = document.getElementById("marcaError").value
-    const descripcion_cortaError = document.getElementById("descripcion_cortaError")
-    const edadDesdeError = document.getElementById("edad_desdeError")
-    const edadHastaError = document.getElementById("edad_hastaError")
+    const shortDescriptionError = document.getElementById("shortDescriptionError")
+    const ageFromError = document.getElementById("ageFromError")
+    const ageToError = document.getElementById("ageToError")
 
 
  // Nombre *
- if (validateStrings(nameInput.value)) { //Validamos primero que haya un valor, nos devuelve un true o un false
-    const validStg = validateStgLength(nameInput.value, 2, 30) //Guardamos el valor que retorna en una variable (Valor minimo 2 y max 30)
-    if (validStg === true) { 
+ if (validateStrings(nameInput.value)) {
+    const validStg = validateStgLength(nameInput.value, 2, 30)
+    if (validStg === true) {
         nameInput.ariaInvalid = false
         nameError.innerText = ""
         nameError.style.display = "none"
@@ -73,87 +77,87 @@ const onSubmitProduct = e => {
         nameError.style.display = "block"
         validForm = false
     }
-     } else {
-         nameInput.ariaInvalid = true
-         nameError.innerText = "Debe colocar caracteres alfabéticos."
-         nameError.style.display = "block" //Le damos al mensaje que aparece un desplay block para que no se encime a ninguna caja 
-         validForm = false
-        }
+} else {
+    nameInput.ariaInvalid = true
+    nameError.innerText = "Debe colocar caracteres alfabéticos."
+    nameError.style.display = "block"
+    validForm = false
+}
         
         
  // Precio *
-        if (!validatePostiveNumber(precioInput.value)) {
-            precioInput.ariaInvalid = true
-            precioError.innerText = "Debe ser un número positivo"
-            precioError.style.display = "block"
-            validForm = false
-        } else {
-            precioInput.ariaInvalid = false
-            precioError.innerText = ""
-            precioError.style.display = "none"
-        }
+ if (!validatePostiveNumber(priceInput.value)) {
+    priceInput.ariaInvalid = true
+    priceError.innerText = "Debe ser un número positivo"
+    priceError.style.display = "block"
+    validForm = false
+} else {
+    priceInput.ariaInvalid = false
+    priceError.innerText = ""
+    priceError.style.display = "none"
+}
     
     
 //Marca
-if (marcaInput.value.length > 0) {
-    if (validateStrings(marcaInput.value)) {
-        const validStgMarca = validateStgLength(marcaErrorInput.value, 2, 30)
-        if (validStgMarca === true) {
-            marcaInput.ariaInvalid = false
-            marcaError.innerText = ""
-            marcaError.style.display = "none"
+if (brandInput.value.length > 0) {
+    if (validateStrings(brandInput.value)) {
+        const validStgBrand = validateStgLength(brandInput.value, 2, 30)
+        if (validStgBrand === true) {
+            brandInput.ariaInvalid = false
+            brandError.innerText = ""
+            brandError.style.display = "none"
         } else {
-            marcaInput.ariaInvalid = true
-            marcaError.innerText = validStgBrand
-            marcaError.style.display = "block"
-            precioForm = false
+            brandInput.ariaInvalid = true
+            brandError.innerText = validStgBrand
+            brandError.style.display = "block"
+            validForm = false
         }
     } else {
-        marcaError.ariaInvalid = true
-        marcaError.innerText = "Debe colocar caracteres alfabéticos."
-        marcaError.style.display = "block"
-        precioForm = false
+        brandInput.ariaInvalid = true
+        brandError.innerText = "Debe colocar caracteres alfabéticos."
+        brandError.style.display = "block"
+        validForm = false
     }
 }
 
 
 // Categoría *
-if (validateStrings(categoriaInput.value)) {
-    const validStgCat = validateStgLength(categoriaInput.value, 2, 15)
+if (validateStrings(categoryInput.value)) {
+    const validStgCat = validateStgLength(categoryInput.value, 2, 15)
     if (validStgCat === true) {
-        categoriaInput.ariaInvalid = false
-        categoriaError.innerText = ""
-        categoriaError.style.display = "none"
+        categoryInput.ariaInvalid = false
+        categoryError.innerText = ""
+        categoryError.style.display = "none"
     } else {
-        categoriaInput.ariaInvalid = true
-        categoriaError.innerText = validStgCat
-        categoriaError.style.display = "block"
+        categoryInput.ariaInvalid = true
+        categoryError.innerText = validStgCat
+        categoryError.style.display = "block"
         validForm = false
     }
 } else {
-    categoriaInput.ariaInvalid = true
-    categoriaError.innerText = "Debe colocar caracteres alfabéticos."
-    categoriaError.style.display = "block"
+    categoryInput.ariaInvalid = true
+    categoryError.innerText = "Debe colocar caracteres alfabéticos."
+    categoryError.style.display = "block"
     validForm = false
 }
 
 // Descripcion corta *
-if (validateStrings(descripcion_cortaInput.value)) {
-    const validStg = validateStgLength(descripcion_cortaInput.value, 10, 140)
+if (validateStrings(shortDescriptionInput.value)) {
+    const validStgDesc = validateStgLength(shortDescriptionInput.value, 10, 140)
     if (validStgDesc === true) {
-        descripcion_cortaInput.ariaInvalid = false
-        descripcion_cortaInput.innerText = ""
-        descripcion_cortaInput.style.display = "none"
+        shortDescriptionInput.ariaInvalid = false
+        shortDescriptionError.innerText = ""
+        shortDescriptionError.style.display = "none"
     } else {
-        descripcion_cortaInput.ariaInvalid = true
-        descripcion_cortaInput.innerText = validStgDesc
-        descripcion_cortaInput.style.display = "block"
+        shortDescriptionInput.ariaInvalid = true
+        shortDescriptionError.innerText = validStgDesc
+        shortDescriptionError.style.display = "block"
         validForm = false
     }
 } else {
-    descripcion_cortaInput.ariaInvalid = true
-    descripcion_cortaInput.innerText = "Debe colocar caracteres alfabéticos."
-    descripcion_cortaInput.style.display = "block"
+    shortDescriptionInput.ariaInvalid = true
+    shortDescriptionError.innerText = "Debe colocar caracteres alfabéticos."
+    shortDescriptionError.style.display = "block"
     validForm = false
 }
 
@@ -176,41 +180,41 @@ if (!validatePostiveNumber(stockInput.value)) {
 }
 
 // Edad desde y hasta
-if (edadDesdeInput.value.length || edadHastaInput.value.length) { 
-    if (!validatePostiveNumber(edadDesdeInput.value)) {
-        edadDesdeInput.ariaInvalid = true
-        edadDesdeError.innerText = "Debe ser un número positivo"
-        edadDesdeError.style.display = "block"
+if (ageFromInput.value.length || ageToInput.value.length) { 
+    if (!validatePostiveNumber(ageFromInput.value)) {
+        ageFromInput.ariaInvalid = true
+        ageFromError.innerText = "Debe ser un número positivo"
+        ageFromError.style.display = "block"
         validForm = false
-    } else if (!validateInt(parseInt(edadDesdeInput.value))) {
-        edadDesdeInput.ariaInvalid = true
-        edadDesdeError.innerText = "Debe ser un número entero"
-        edadDesdeError.style.display = "block"
+    } else if (!validateInt(parseInt(ageFromInput.value))) {
+        ageFromInput.ariaInvalid = true
+        ageFromError.innerText = "Debe ser un número entero"
+        ageFromError.style.display = "block"
         validForm = false
     } else {
         ageFromInput.ariaInvalid = false
         ageFromError.innerText = ""
         ageFromError.style.display = "none"
     }
-    if (!validatePostiveNumber(edadHastaInput.value)) {
-        edadHastaInput.ariaInvalid = true
-        edadHastaError.innerText = "Debe ser un número positivo"
-        edadHastaError.style.display = "block"
+    if (!validatePostiveNumber(ageToInput.value)) {
+        ageToInput.ariaInvalid = true
+        ageToError.innerText = "Debe ser un número positivo"
+        ageToError.style.display = "block"
         validForm = false
-    } else if (!validateInt(parseInt(edadHastaInput.value))) {
-        edadHastaInput.ariaInvalid = true
-        edadHastaError.innerText = "Debe ser un número entero"
-        edadHastaError.style.display = "block"
+    } else if (!validateInt(parseInt(ageToInput.value))) {
+        ageToInput.ariaInvalid = true
+        ageToError.innerText = "Debe ser un número entero"
+        ageToError.style.display = "block"
         validForm = false
-    } else if (parseInt(edadDesdeInput.value) >= parseInt(edadHastaInput.value)) {
-        edadHastaInput.ariaInvalid = true
-        edadHastaError.innerText = "La edad hasta no debe ser menor a edad desde."
-        edadHastaError.style.display = "block"
+    } else if (parseInt(ageFromInput.value) >= parseInt(ageToInput.value)) {
+        ageToInput.ariaInvalid = true
+        ageToError.innerText = "La edad hasta no debe ser menor a edad desde."
+        ageToError.style.display = "block"
         validForm = false
     } else {
-        edadHastaInput.ariaInvalid = false
-        edadHastaError.innerText = ""
-        edadHastaError.style.display = "none"
+        ageToInput.ariaInvalid = false
+        ageToError.innerText = ""
+        ageToError.style.display = "none"
     }
 }
 
