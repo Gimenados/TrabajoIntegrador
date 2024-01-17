@@ -31,7 +31,7 @@
       flex-direction: column;
       z-index: 2; /* Asegura que el texto esté por encima de las imágenes */
       color: rgb(13, 13, 23); /* Estilo del texto */
-      backdrop-filter: blur(3.5px);
+      backdrop-filter: blur(2px);
       border: 1px solid black;
       
     
@@ -79,7 +79,7 @@
       @extend %title-style;
       padding-bottom: 0.5rem;
     }
-  
+
      label {
       font-size: 1rem;
       font-weight: 900;

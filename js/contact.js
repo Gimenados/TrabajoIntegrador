@@ -7,6 +7,7 @@ function showError(field, errorMessage) {
     errorDiv.style.display = 'block';
     errorDiv.style.color = 'red';
     errorDiv.style.marginTop = '8px';
+    errorDiv.style.fontWeight = 'bold';
 
     const parent = field.parentElement;
     parent.appendChild(errorDiv);
@@ -31,19 +32,20 @@ const onSubmitProduct = (e) => {
 
     // Nombre
     if (validateStrings(nameInput.value)) {
-        const validStg = validateStgLength(nameInput.value, 2, 30);
+        const validStgName = validateStgLength(nameInput.value, 2, 20);
 
-        if (validStg === true) {
+        if (validStgName === true) {
             nameInput.setAttribute('aria-invalid', 'false');
             clearError(nameInput);
         } else {
             nameInput.setAttribute('aria-invalid', 'true');
-            showError(nameInput, validStg);
+            showError(nameInput, validStgName);
             validForm = false;
         }
     } else {
         nameInput.setAttribute('aria-invalid', 'true');
         showError(nameInput, "Debe colocar caracteres alfabéticos.");
+        console.log(showError)
         validForm = false;
     }
 
@@ -76,7 +78,14 @@ const onSubmitProduct = (e) => {
         validForm = false;
     }
 
-    if (validForm) {
-        console.log("Formulario válido. Puedes enviar los datos.");
-    }
+    if(validForm && commentInput.value) {
+        const newComment = {
+            name: nameInput.value,
+            email: emailInput.value,
+            comment: commentInput.value
+        };
+        const stgComment = JSON.stringify(newComment);
+        localStorage.setItem("message", stgComment)
+        alert("Tu mensaje fue enviado correctamente")
+    } else alert("Debe completar correctamente el comentario al enviar")
 };

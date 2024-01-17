@@ -1,6 +1,6 @@
 .form_container_high {
     @extend %flex-center;
-    background-image: url(https://www.lavanguardia.com/uploads/2020/12/28/5fe97a7f04aa6.jpeg);
+    background-image: url(/imagenes/section.jpeg);
     background-position: 75% 100% ;
     background-repeat: no-repeat;
     background-size: cover;
@@ -40,10 +40,14 @@
         }
       }
 
+      .form-control[aria-invalid="true"] {
+        outline: 2px solid rgb(182, 17, 17);
+    }
+
       .input-msg-error {
         color: rgb(184, 19, 19) !important;
         display: none;
-
+        font-weight: 900;
       }
   
       textarea {

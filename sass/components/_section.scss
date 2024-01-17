@@ -36,7 +36,7 @@
     .section2_element1 {
       @extend %flex-center;
       @extend %section-container;
-      background-image: url(https://i.pinimg.com/564x/00/56/b0/0056b02da378ea5d28b54e0ba15525a0.jpg);
+      background-image: url(/imagenes/fondo1.jpg);
       background-repeat: no-repeat;
       
       p {
@@ -49,7 +49,7 @@
     .section2_element2 {
       @extend %flex-center;
       @extend %section-container;
-      background-image: url(https://i.pinimg.com/564x/49/8f/45/498f456f7725b66443dcb62ae0794c36.jpg);
+      background-image: url(/imagenes/fondo2.jpg);
       background-repeat: no-repeat;
   
       p {
@@ -60,7 +60,7 @@
     .section2_element3 {
       @extend %flex-center;
       @extend %section-container;
-      background-image: url(https://i.pinimg.com/564x/f9/5f/ac/f95facb59d05714ee4fa16cf449083a3.jpg);
+      background-image: url(/imagenes/fondo3.jpg);
       background-position: 8% 50% !important;
       background-repeat: no-repeat;
       p {

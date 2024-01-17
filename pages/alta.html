@@ -23,35 +23,34 @@
           </nav>
       </header>
     
-      
       <form class="form_container_high" id="uploadForm" onsubmit="onSubmitProduct(event)">
           <h2>Dar de alta a un producto</h2>
           
         <!-- Grupo 1: Información general -->
         <fieldset>
             <legend>Información General</legend>
-            <label for="name" class="label-required">Nombre del Juguete:</label>
-            <input type="text" class="form_control" id="name" name="name" min="0" required>
+            <label for="name" class="form-label label-required">Nombre</label>
+            <input type="text" class="form-control" id="name" name="name" required>
 
                <p id="nameError" class="input-msg-error"></p> 
 
-            <label for="price" class="label-required">Precio:</label>
-            <input type="number" class="form_control"  id="price" name="price" step="0.01" required>
+            <label for="price" class="form-label label-required">Precio</label>
+            <input type="number" class="form-control" id="price" name="price" required>
 
                 <p id="priceError" class="input-msg-error"></p>
 
-            <label for="stock" class="label-required">Cantidad en Stock:</label>
-            <input type="number" class="form_control"  id="stock" name="stock" required min="0">
+            <label for="stock" class="form-label label-required">Stock</label>
+            <input type="number" class="form-control" id="stock" name="stock" required min="0">
 
                 <p id="stockError" class="input-msg-error"></p>
 
-            <label for="brand">Marca:</label>
-            <input type="text" id="price" name="brand" maxlength="20">
+            <label for="brand" class="form-label label-required">Marca</label>
+            <input type="text" class="form-control" id="brand" name="brand" maxlength="20">
 
                 <p id="brandError" class="input-msg-error"></p>
 
-            <label for="categoria" class="label-required">Categoría:</label>
-            <input type="text" class="form_control"  id="category" name="categoria" required>
+            <label for="category" class="form-label label-required">Categoría</label>
+            <input type="text" class="form-control" id="category" name="category" required>
 
                  <p id="categoryError" class="input-msg-error"></p>
 
@@ -60,44 +59,42 @@
         <!-- Grupo 2: Descripción -->
         <fieldset>
             <legend>Descripción</legend>
-            <label for="shortDescription" class="label-required">Descripción Corta:</label>
+            <label for="shortDescription" class="form-label label-required">Descripción corta</label>
             <textarea id="shortDescription"  name="shortDescription" rows="4" required maxlength="120"></textarea>
              
-                  <p id="shortDescription" class="input-msg-error"></p> 
+                  <p id="shortDescriptionError" class="input-msg-error"></p>
 
-            <label for="descripcion_larga">Descripción Detallada:</label>
-            <textarea id="descripcion_larga" name="descripcion_larga" rows="8"></textarea>
+            <label for="longDescription" class="form-label">Descripción larga</label>
+            <textarea id="longDescription" name="longDescription" rows="8"></textarea>
         </fieldset>
 
         <!-- Grupo 3: Información adicional -->
         <fieldset>
             <legend>Información Adicional</legend>
             <div class="div_container">
-                <label for="envio_sin_cargo">Envío sin Cargo:</label>
-                <input class="form_control"  type="checkbox" id="envio" name="envio_sin_cargo">
+                <label for="freeDeliver" class="form-label">Envio sin cargo</label>
+                <input type="checkbox" class="form-checkbox" id="freeDeliver" name="freeDeliver">
             </div>
 
-            <label for="ageFrom">Edad desde:</label>
-            <input type="number" id="ageFrom" name="ageFrom" min="0">
+            <label for="ageFrom label-required">Edad desde:</label>
+            <input type="number" class="form-control label-required" id="ageFrom" name="ageFrom" min="0">
 
                 <p id="ageFromError" class="input-msg-error"></p>
 
-            <label for="ageTo">Edad hasta:</label>
-            <input class="form_control"  type="number" id="ageTo" name="edad_hasta" max="1">
-                 <p id="ageToError" class="input-msg-error"></p>
+            <label for="ageTo" class="form-label label-required">Edad hasta</label>
+            <input type="number" class="form-control" id="ageTo" name="ageTo" min="1">
+                <p id="ageToError" class="input-msg-error"></p>
         </fieldset>
 
         <!-- Grupo 4: Foto -->
         <fieldset>
-            <legend>Foto</legend>
-            <label for="foto" class="label-required">Foto:</label>
-            <input class="form_control"  type="file" id="photo" name="photo" accept="image/*" required>
+            <label for="photo" class="form-label label-required">Foto</label>
+            <input type="file" class="form-control" id="photo" name="photo" required>
                   
         </fieldset>
         <div class="button_container">
-            <button class="btn btn-primary">Guardar producto</button>
+            <button type="submit" class="btn btn-primary">Guardar producto</button>
         </div>
-        <!-- Botón de envío -->
 
     </form>
     <footer class="footer_container">
