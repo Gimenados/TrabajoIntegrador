@@ -1,6 +1,7 @@
 $screen-lg: 950px;
 $screen-md: 900px;
 $screen-sm: 700px;
+$screen-ct: 530px;
 
 @media screen and (max-width: $screen-lg) {
   .select_container_location {
@@ -10,6 +11,14 @@ $screen-sm: 700px;
       height: 150vh;
     }
   }
+  .cards__container {
+    .cards__element {
+      img {
+        height: 15vw;
+        width: 15vw;
+      }
+    }
+  }
 }
 
 @media screen and (max-width: $screen-md) {
@@ -17,7 +26,7 @@ $screen-sm: 700px;
     align-content: space-around !important;
     flex-direction: column !important;
     justify-content: center !important;
-    padding: 1rem !important;
+    padding: 2rem !important;
     img {
       margin-bottom: 1rem;
     }
@@ -31,6 +40,18 @@ $screen-sm: 700px;
   .section__container {
     margin: 0;
     padding: 7rem 1rem !important;
+  }
+
+  .slider_container {
+    .text_container {
+       margin: 1.5rem;
+       h2 {
+        font-size: 2rem !important;
+       }
+       p {
+        font-size: 1rem !important;
+       }
+    }
   }
 }
 
@@ -70,11 +91,38 @@ $screen-sm: 700px;
     width: 100% !important;
   }
 
+  .select_container_us {
+    flex-wrap: wrap;
+  }
+
   .select_container_us div {
     width: 50%;
+    padding: 0rem 1rem;
   }
 
   .select_container_location {
     padding-right: 16px;
+  }
+}
+
+@media screen and (max-width: $screen-ct) {
+  .section2_container {
+    flex-wrap: wrap !important;
+    height: 40vh;
+    p {
+      font-size: 0.7rem !important;
+    }
+  }
+  .section__container {
+    justify-content: start;
+    flex-wrap: nowrap;
+  }
+  .cards__container {
+    .cards__element {
+      img {
+        height: 20vw;
+        width: 20vw;
+      }
+    }
   }
 }

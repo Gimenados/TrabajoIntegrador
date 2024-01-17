@@ -1,41 +1,23 @@
 
-// const onSubmitProduct = e => {
-//     e.preventDefault();
-//     const subName = document.getElementById("name").value;
-//     console.log(subName);
-// };
-
-//Nombre * Marca Categoria * Descripcion corta *
-
-const validateStrings = (string) => {
-    const regex = new RegExp("^[A-Za-z Ññ]+$")
-    return regex.test(string)
-}
-
-const validateStgLength = (stg, minLength, maxLength) => {
-    if (stg.length < minLength) {
-        return `El valor debe tener al menos ${minLength} caracteres.`
-    } else if (stg.length > maxLength) {
-        return `El valor debe tener no más de ${maxLength} caracteres.`
-    } else {
-        return true
+const saveGame = game => {
+    const form = document.getElementById("uploadForm")
+    const initialValue = localStorage.getItem("games") || JSON.stringify([])
+    const values = JSON.parse(initialValue)
+    const gameWithId = {
+        id: values.length + 1,
+        ...game
     }
+    if (values.length) {
+        const newValues = [ ...values, gameWithId ]
+        const newValStg = JSON.stringify(newValues)
+        localStorage.setItem("games", newValStg)
+    } else {
+        const initialGames = JSON.stringify([gameWithId])
+        localStorage.setItem("games", initialGames)
+    }
+    form.reset()
+    alert("El juego ha sido guardado correctamente")
 }
-
-const validatePostiveNumber = num => num >= 0
-
-const validateInt = num => Number.isInteger(num)
-
-// Foto * Emails
-
-const validateEmails = (email) => {
-    const regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-    return regex.test(email)
-}
-
-//Precio * Stock * Edad desde y  hasta 
-
-const validatePositiveNumber = num => num >= 0;
 
 //Traemos todos los valores de mi formulario
 const onSubmitProduct = e => {

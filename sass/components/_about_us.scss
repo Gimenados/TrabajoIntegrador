@@ -8,7 +8,9 @@
   }
   
   .select_container_us {
-    @extend %flex-center;    
+    display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: row;
     padding: 1rem;
   
@@ -16,7 +18,7 @@
       @extend %flex-center;
       flex-direction: column;
       text-align: center;
-      width: 30%;
+      width: 40%;
       flex-wrap: wrap;
     }
 
