@@ -495,7 +495,7 @@ body {
   padding: 1rem 0rem;
   margin-bottom: 0px !important;
 }
-.select_container_location p {
+.select_container_location h3 {
   border: 1px;
   font-weight: 900;
   margin: 2rem;
