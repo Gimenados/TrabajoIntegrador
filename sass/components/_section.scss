@@ -39,9 +39,8 @@
       background-image: url(/imagenes/fondo1.jpg);
       background-repeat: no-repeat;
       
-      p {
+      h3 {
         @extend %title-style2;
-        // backdrop-filter: blur(10px);
         padding: 1.5rem 3rem;
       }
     }
@@ -52,7 +51,7 @@
       background-image: url(/imagenes/fondo2.jpg);
       background-repeat: no-repeat;
   
-      p {
+      h3 {
         @extend %title-style2;
       }
     }
@@ -63,7 +62,7 @@
       background-image: url(/imagenes/fondo3.jpg);
       background-position: 8% 50% !important;
       background-repeat: no-repeat;
-      p {
+      h3 {
         @extend %title-style2;
         padding: 0rem 0.2rem;
       }

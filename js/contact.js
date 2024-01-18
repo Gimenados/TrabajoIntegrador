@@ -44,8 +44,7 @@ const onSubmitProduct = (e) => {
         }
     } else {
         nameInput.setAttribute('aria-invalid', 'true');
-        showError(nameInput, "Debe colocar caracteres alfabéticos.");
-        console.log(showError)
+        showError(nameInput, "Debe colocar caracteres alfabéticos en el nombre.");
         validForm = false;
     }
 
@@ -60,23 +59,24 @@ const onSubmitProduct = (e) => {
         validForm = false;
     }
 
-    //Comentario
-    if (validateStrings(commentInput.value)) {
-        const validStg = validateStgLength(commentInput.value, 2, 200);
+//Comentario
+if (validateStrings(commentInput.value)) {
+    const validStg = validateStgLength(commentInput.value, 2, 200);
 
-        if (validStg === true) {
-            commentInput.setAttribute('aria-invalid', 'false');
-            clearError(nameInput);
-        } else {
-            commentInput.setAttribute('aria-invalid', 'true');
-            showError(nameInput, validStg);
-            validForm = false;
-        }
+    if (validStg === true) {
+        commentInput.setAttribute('aria-invalid', 'false');
+        clearError(commentInput);
     } else {
         commentInput.setAttribute('aria-invalid', 'true');
-        showError(nameInput, "Debe colocar caracteres alfabéticos.");
+        showError(commentInput, validStg); 
         validForm = false;
     }
+} else {
+    commentInput.setAttribute('aria-invalid', 'true');
+    showError(commentInput, "Debe colocar caracteres alfabéticos en los comentarios.");
+    validForm = false;
+}
+
 
     if(validForm && commentInput.value) {
         const newComment = {

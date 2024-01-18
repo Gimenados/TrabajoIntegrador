@@ -16,7 +16,7 @@
   font-size: 1.8rem;
 }
 
-.section2_container .section2_element3 p, .section2_container .section2_element2 p, .section2_container .section2_element1 p {
+.section2_container .section2_element3 h3, .section2_container .section2_element2 h3, .section2_container .section2_element1 h3 {
   font-family: "Lemon", serif;
   letter-spacing: 0.2rem;
   font-size: 1rem;
@@ -427,7 +427,7 @@ body {
   background-image: url(/imagenes/fondo1.jpg);
   background-repeat: no-repeat;
 }
-.section2_container .section2_element1 p {
+.section2_container .section2_element1 h3 {
   padding: 1.5rem 3rem;
 }
 .section2_container .section2_element2 {
@@ -439,7 +439,7 @@ body {
   background-position: 8% 50% !important;
   background-repeat: no-repeat;
 }
-.section2_container .section2_element3 p {
+.section2_container .section2_element3 h3 {
   padding: 0rem 0.2rem;
 }
 
