@@ -26,6 +26,8 @@
       legend {
         font-size: 1.2rem;
         font-weight: bold;
+        font-family: "Indie Flower", cursive;
+        letter-spacing: 0.2rem;
         text-transform: uppercase;
       }
 
@@ -36,7 +38,9 @@
   
       label {
         font-weight: bold;
-        margin-top: 1.2rem;
+        font-family: "Indie Flower", cursive;
+        margin-top: 0.6rem;
+        letter-spacing: 0.2rem;
         padding: 0.5rem;
         &.label-required::after {
           content: "(*)";
@@ -62,6 +66,8 @@
       input {
         background-color: #f5fafd00 !important;;
         border: none;
+        font-family: "Indie Flower", cursive;
+        letter-spacing: 0.15rem;
         font-weight: 900;
         padding: 0.5rem;
         border-bottom: 1px solid black !important;

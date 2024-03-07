@@ -2,6 +2,8 @@ $screen-lg: 950px;
 $screen-md: 900px;
 $screen-sm: 700px;
 $screen-ct: 530px;
+$screen-s: 475px;
+$screen-ch: 350px;
 
 @media screen and (max-width: $screen-lg) {
   .select_container_location {
@@ -24,6 +26,7 @@ $screen-ct: 530px;
 @media screen and (max-width: $screen-md) {
   .footer_container {
     align-content: space-around !important;
+    flex-wrap: nowrap;
     flex-direction: column !important;
     justify-content: center !important;
     padding: 2rem !important;
@@ -34,6 +37,9 @@ $screen-ct: 530px;
       flex-direction: row !important;
       flex-wrap: wrap;
       margin-top: 3rem !important;
+    }
+    .footer_element2 {
+      margin: 20px;
     }
   }
 
@@ -88,33 +94,28 @@ $screen-ct: 530px;
 
   .select_container_us,
   .select_container_location {
-    width: 100% !important;
+    width: 100%;
   }
 
   .select_container_us {
-    flex-wrap: wrap;
+    flex-wrap: wrap !important;
+    flex-direction: column;
   }
 
   .select_container_us div {
-    width: 50%;
+    width: 100%;
     padding: 0rem 1rem;
   }
 
   .select_container_location {
     padding-right: 16px;
+    flex-direction: column;
   }
 }
 
 @media screen and (max-width: $screen-ct) {
-  .section2_container {
-    flex-wrap: wrap !important;
-    height: 40vh;
-    p {
-      font-size: 0.7rem !important;
-    }
-  }
   .section__container {
-    justify-content: start;
+    justify-content: end;
     flex-wrap: nowrap;
   }
   .cards__container {
@@ -126,3 +127,26 @@ $screen-ct: 530px;
     }
   }
 }
+
+@media screen and (max-width: $screen-s) {
+  .header_container .header__element__2 ul {
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+  }
+  .header_container .header__element__2 ul li {
+    margin: 0rem 1rem 1rem 1rem !important;
+  }
+  .footer_container .footer_element ul li {
+    margin: 0px;
+    flex-wrap: wrap;
+    margin-bottom: 16px !important;
+    a {
+      padding: 0px !important;
+    }
+  }
+  .footer_container .footer_element_2 {
+      align-items: flex-start !important;
+      text-align: center;
+    }
+  }
