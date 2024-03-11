@@ -36,7 +36,7 @@ $screen-ch: 350px;
     .footer_element {
       flex-direction: row !important;
       flex-wrap: wrap;
-      margin-top: 3rem !important;
+      margin: 3rem 0rem 0.5rem 0rem !important;
     }
     .footer_element2 {
       margin: 20px;
@@ -46,6 +46,16 @@ $screen-ch: 350px;
   .section__container {
     margin: 0;
     padding: 7rem 1rem !important;
+  }
+
+  .slider .text_container {
+    padding: 2rem;
+    h2 {
+      font-size: 1.5rem;
+    }
+    p {
+      font-size: 1rem;
+    }
   }
 
   .slider_container {
@@ -70,6 +80,12 @@ $screen-ch: 350px;
       text-align: center;
     }
   }
+  .form_container_high h2 { 
+    font-size: 1.4rem;
+  }
+  .select_container_location h3 {
+    font-size: 1.4rem;
+  }
 
   .header_container {
     flex-wrap: wrap;
@@ -77,6 +93,7 @@ $screen-ch: 350px;
     height: 50%;
 
     .header__element {
+      width: 70%;
       margin: 0.5rem !important;
       img {
         width: 30px;
@@ -87,9 +104,9 @@ $screen-ch: 350px;
 
   .footer_container {
     padding-top: 2.5rem !important;
-    .footer_element {
-      margin-bottom: 1rem;
-    }
+    // .footer_element {
+    //   margin-bottom: 1rem;
+    // }
   }
 
   .select_container_us,
@@ -121,10 +138,13 @@ $screen-ch: 350px;
   .cards__container {
     .cards__element {
       img {
-        height: 20vw;
-        width: 20vw;
+        height: 35vw;
+        width: 35vw;
       }
     }
+  }
+  .form_container_high fieldset { 
+    width: 85%;
   }
 }
 
@@ -138,15 +158,49 @@ $screen-ch: 350px;
     margin: 0rem 1rem 1rem 1rem !important;
   }
   .footer_container .footer_element ul li {
-    margin: 0px;
     flex-wrap: wrap;
-    margin-bottom: 16px !important;
+    // margin-bottom: 16px !important;
     a {
       padding: 0px !important;
+    }
+  }
+  .slider .text_container {
+    top: 68%;
+    h1 {
+      font-size: 1.4rem !important;
+    }
+    p {
+      font-size: 0.5rem !important;
     }
   }
   .footer_container .footer_element_2 {
       align-items: flex-start !important;
       text-align: center;
     }
+  .form_container_contact .form_element_contact {
+    h2 {
+      font-size: 1.5rem;
+  }
+  }
+}
+
+
+  @media screen and (max-width: $screen-ch) {
+  .footer_container img {
+    margin: 3rem 0rem 0.5rem 0rem;
+  }
+  .footer_container .footer_element ul {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    li {
+      margin: 0.5rem;
+    }
+  }
+  .form_container_contact .form_element_contact {
+    h2 {
+      font-size: 1rem;
+  }
+  }
+
   }

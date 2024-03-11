@@ -1,3 +1,28 @@
+//Slider de imagenes 
+const sliderImages = document.querySelectorAll('.slider_container img');
+    
+// Función para mostrar una imagen cada 5 segundos
+function mostrarSiguienteImagen() {
+    let index = 0; //Arranca en la primera imagen
+    return function() {
+        // Ocultar todas las imágenes
+        sliderImages.forEach(img => img.style.display = 'none'); //Recorre las imagenes 
+        // Mostrar la siguiente imagen y volver al principio si es necesario
+        sliderImages[index].style.display = 'block'; //Para hacerla visible 
+        index = (index + 1) % sliderImages.length; 
+    }
+}
+
+const mostrarSiguiente = mostrarSiguienteImagen();
+
+// Mostrar la primera imagen inmediatamente
+mostrarSiguiente();
+
+// Actualizar la imagen cada 5 segundos
+setInterval(mostrarSiguiente, 3000);
+
+
+//FORMULARIO
 //Mensaje error
 function showError(field, errorMessage) {
     const errorDiv = document.createElement('div');

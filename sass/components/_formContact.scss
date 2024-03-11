@@ -1,59 +1,47 @@
-  .slider_container {
-    margin-left: 0px !important;
-    position: relative;
-    max-width: 100% !important;
-    animation: slide 15s infinite alternate ease-in-out;
-    ul {
+  
+  .slider {
+    // display: flex;
+    // flex-direction: row;
+    .slider_container {
+      margin-left: 0px !important;
       display: flex;
-      padding: 0 !important;
-      width: 400%;
-      li {
-        list-style: none;
-        width: 100%;
-        position: relative;
-        text-align: center;
-        @extend %flex-center;
-      }
+      flex-wrap: wrap;
+      flex-direction: column;
+      position: relative;
+      max-width: 100% !important;
+      // animation: slide 15s infinite alternate ease-in-out;
+      
       img {
         width: 100%;
-        height: 100% !important;
+        height: 60% !important;
         height: auto; 
         box-sizing: border-box;
         position: relative; 
       }
     }
     .text_container {
-      position: absolute;
-      text-align: center;
-      display: flex;
-      justify-content: center;
-      padding: 1.5rem;
       flex-direction: column;
-      z-index: 2; /* Asegura que el texto esté por encima de las imágenes */
-      color: rgb(13, 13, 23); /* Estilo del texto */
-      backdrop-filter: blur(2px);
-      border: 1px solid black;
-      
-    
-      h2 {
-        font-family: 'Rubik Doodle Shadow', sans-serif !important;
-        letter-spacing: 0.3rem;
-        font-weight: 900;
-        font-size: 3rem !important;
-        margin-bottom: 35px;
-        text-transform: uppercase;
+      padding: 3rem;
+      background: linear-gradient(45deg, rgba(244, 246, 242, 0.12), $primary-color);
+      box-shadow: $box-primary;
+      top: 65%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 80%;
+      position: absolute;
+      h1 {
+        font-size: 2rem;
+        font-family: "Indie Flower";
+        text-align: center;
       }
-    
       p {
-        width: 100%;
-        font-weight: 900;
-        padding: 0.5rem 0;
-        font-family: 'Lemon', serif;
-        backdrop-filter: blur(1px);
+        font-size: 1.5rem;
+        font-family: "Indie Flower", cursive;
+        text-align: center;
       }
     }
   }
-
+    
   .form_container_contact {
     align-items: center;
     background: linear-gradient(45deg, rgb(244, 246, 242), $primary-color);
@@ -82,6 +70,7 @@
 
      label {
       font-size: 1rem;
+      font-family: "Indie Flower", cursive;
       font-weight: 900;
       padding: 0.8rem 0rem;
       &.label-required::after {
@@ -100,7 +89,7 @@
        font-weight: 900;
        border: none;
        border-bottom: 1px solid black;
-       width: 60%;
+       width: 75%;
        background-color: rgba(240, 248, 255, 0);
        margin-bottom: 20px !important;
      }
@@ -118,9 +107,9 @@
   }
   }
 
-  @keyframes slide {
-    0%, 20% { transform: translateX(0); }
-    30%, 50% { transform: translateX(-100%); }
-    60%, 80% { transform: translateX(-200%); }
-    90%, 100% { transform: translateX(-300%); }
-  }
+  // @keyframes slide {
+  //   0%, 20% { transform: translateX(0); }
+  //   30%, 50% { transform: translateX(-100%); }
+  //   60%, 80% { transform: translateX(-200%); }
+  //   90%, 100% { transform: translateX(-300%); }
+  // }

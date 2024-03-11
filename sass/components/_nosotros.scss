@@ -14,7 +14,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    padding: 1rem;
+    padding: 2rem;
   
     div {
       @extend %flex-center;
@@ -69,7 +69,7 @@
       font-family: "Rubik Doodle Shadow", sans-serif !important;
       letter-spacing: 0.3rem;
       font-size: 1.8rem;
-      margin: 0rem 1rem 1rem 1rem;
+      margin: 0.5rem 1rem 1rem 1rem;
       text-align: center;
     }
     p {
